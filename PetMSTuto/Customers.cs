@@ -121,40 +121,10 @@ namespace PetMSTuto
             }
         }
 
-        private void DeleteBtn_Click(object sender, EventArgs e)
-        {
-            if (Key == 0)
-            {
-                MessageBox.Show("Vui lòng chọn khách hàng cần xóa");
-            }
-            else
-            {
-                try
-                {
-                    using (var context = new PetShopDbDataContext())
-                    {
-                        var customerToDelete = context.CustomerTbls.FirstOrDefault(cust => cust.CustId == Key);
-
-                        if (customerToDelete != null)
-                        {
-                            context.CustomerTbls.DeleteOnSubmit(customerToDelete);
-                            context.SubmitChanges();
-                            MessageBox.Show("Khách hàng đã được xóa");
-                            DisplayCustomers();
-                            Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Khách hàng không tồn tại");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
+        //private void DeleteBtn_Click(object sender, EventArgs e)
+        //{ Do khach hang co the ghe lai vao lan sau de mua hang hoac cac
+        //thong tin khach hang trong hoa don da duoc luu lai nen khong nen co chuc nang xoa
+        //}
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
@@ -235,7 +205,7 @@ namespace PetMSTuto
             {
                 PetShopDbDataContext db = new PetShopDbDataContext();
                 CustomerDGV.DataSource = db.CustomerTbls.Where(p => p.CustName.Contains(namePr)).ToList()
-                    .Select((p, index) => new { p.CustId, p.CustName, p.CustAdd, p.CustPhone}).OrderBy(p => p.CustName)
+                    .Select((p, index) => new { p.CustId, p.CustName, p.CustAdd, p.CustPhone,p.CustType}).OrderBy(p => p.CustName)
                     .ToList();
             }
         }

@@ -382,6 +382,7 @@ namespace PetMSTuto
             QtyTb.Text = "";
             CustNameTb.Text = "";
             PrPriceTb.Text = "";
+            CustTypeTb.Text = "";
             Stock = 0;
             Key = 0;
         }

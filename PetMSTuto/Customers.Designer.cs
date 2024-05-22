@@ -52,7 +52,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label14 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.DeleteBtn = new Guna.UI2.WinForms.Guna2Button();
             this.EditBtn = new Guna.UI2.WinForms.Guna2Button();
             this.SaveBtn = new Guna.UI2.WinForms.Guna2Button();
             this.CustPhoneTb = new System.Windows.Forms.TextBox();
@@ -345,7 +344,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel3.Controls.Add(this.DeleteBtn);
             this.panel3.Controls.Add(this.EditBtn);
             this.panel3.Controls.Add(this.SaveBtn);
             this.panel3.Controls.Add(this.CustPhoneTb);
@@ -360,23 +358,6 @@
             this.panel3.Size = new System.Drawing.Size(435, 226);
             this.panel3.TabIndex = 2;
             // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.BorderRadius = 10;
-            this.DeleteBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DeleteBtn.FillColor = System.Drawing.Color.MediumPurple;
-            this.DeleteBtn.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.ForeColor = System.Drawing.Color.Black;
-            this.DeleteBtn.Location = new System.Drawing.Point(290, 179);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(82, 32);
-            this.DeleteBtn.TabIndex = 27;
-            this.DeleteBtn.Text = "Xóa";
-            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
-            // 
             // EditBtn
             // 
             this.EditBtn.BorderRadius = 10;
@@ -387,7 +368,7 @@
             this.EditBtn.FillColor = System.Drawing.Color.MediumPurple;
             this.EditBtn.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditBtn.ForeColor = System.Drawing.Color.Black;
-            this.EditBtn.Location = new System.Drawing.Point(177, 179);
+            this.EditBtn.Location = new System.Drawing.Point(237, 179);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(82, 32);
             this.EditBtn.TabIndex = 26;
@@ -404,7 +385,7 @@
             this.SaveBtn.FillColor = System.Drawing.Color.MediumPurple;
             this.SaveBtn.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.Black;
-            this.SaveBtn.Location = new System.Drawing.Point(66, 179);
+            this.SaveBtn.Location = new System.Drawing.Point(126, 179);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(82, 32);
             this.SaveBtn.TabIndex = 25;
@@ -883,7 +864,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button DeleteBtn;
         private Guna.UI2.WinForms.Guna2Button EditBtn;
         private Guna.UI2.WinForms.Guna2Button SaveBtn;
         private System.Windows.Forms.TextBox CustPhoneTb;
