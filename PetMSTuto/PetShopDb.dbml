@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PetShopDb" Class="PetShopDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-T5JJDPN\SQLEXPRESS;Initial Catalog=PetShopDb;Integrated Security=True;Encrypt=False;Trust Server Certificate=True" SettingsObjectName="PetMSTuto.Properties.Settings" SettingsPropertyName="PetShopDbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BillTbl" Member="BillTbls">
+    <Type Name="BillTbl">
+      <Column Name="BNum" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CustId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Amt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CustomerTbl_BillTbl" Member="CustomerTbl" ThisKey="CustId" OtherKey="CustId" Type="CustomerTbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmployeeTbl" Member="EmployeeTbls">
+    <Type Name="EmployeeTbl">
+      <Column Name="EmpNum" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpAdd" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpDOB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EmpPhone" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpAcc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InvoiceTbl" Member="InvoiceTbls">
+    <Type Name="InvoiceTbl">
+      <Column Name="INum" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PrName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PrQty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tamt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ProductTbl_InvoiceTbl" Member="ProductTbl" ThisKey="PrName" OtherKey="PrName" Type="ProductTbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductTbl" Member="ProductTbls">
+    <Type Name="ProductTbl">
+      <Column Name="PrId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PrName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PrCat" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PrQty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ProductTbl_InvoiceTbl" Member="InvoiceTbls" ThisKey="PrName" OtherKey="PrName" Type="InvoiceTbl" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTbl" Member="UserTbls">
+    <Type Name="UserTbl">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserAcc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserPass" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserPhone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserDOB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustomerTbl" Member="CustomerTbls">
+    <Type Name="CustomerTbl">
+      <Column Name="CustId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CustAdd" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CustPhone" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CustType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CustomerTbl_BillTbl" Member="BillTbls" ThisKey="CustId" OtherKey="CustId" Type="BillTbl" />
+    </Type>
+  </Table>
+</Database>
